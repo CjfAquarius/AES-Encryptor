@@ -29,13 +29,13 @@ jobs:
 
       - name: Build with Nuitka
         run: |
-          python -m nuitka ^
-          --onefile ^
-          --windows-disable-console ^
-          --enable-plugin=tk-inter ^
-          --output-filename=AESFolderTool.exe ^
-          --output-dir=dist ^
-          main.py
+          python -m nuitka `
+            --onefile `
+            --windows-disable-console `
+            --enable-plugin=tk-inter `
+            --output-filename=AESFolderTool.exe `
+            --output-dir=dist `
+            main.py
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
