@@ -32,7 +32,6 @@ jobs:
           $env:NUITKA_ASSUME_YES_FOR_DOWNLOADS = "1"
 
           python -m nuitka `
-            --onefile `
             --mode=onefile `
             --assume-yes-for-downloads `
             --windows-console-mode=disable `
