@@ -29,10 +29,16 @@ jobs:
 
       - name: Build with Nuitka
         run: |
+          $env:NUITKA_ASSUME_YES_FOR_DOWNLOADS = "1"
+
           python -m nuitka `
             --onefile `
-            --windows-disable-console `
+            --mode=onefile `
+            --assume-yes-for-downloads `
+            --windows-console-mode=disable `
             --enable-plugin=tk-inter `
+            --include-package=cryptography `
+            --include-package=_cffi_backend `
             --output-filename=AESFolderTool.exe `
             --output-dir=dist `
             main.py
